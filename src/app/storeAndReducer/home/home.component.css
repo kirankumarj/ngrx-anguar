@@ -1,0 +1,15 @@
+#dec, #res, #inc {
+  width: 33%;
+  border: 2px groove mediumseagreen;
+}
+#inc{
+  float: left;
+}
+#dec, #res{
+  float: right;
+}
+
+
+/* botton{
+
+} */

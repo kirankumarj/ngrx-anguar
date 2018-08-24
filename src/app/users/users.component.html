@@ -1,0 +1,26 @@
+<input type="text" #name>
+<input type="number" #age>
+<input type="number" #salary>
+
+<input type="submit" (click)="sendData(name.value,age.value,salary.value)">
+
+<ul>
+  <li *ngFor="let user of users | async; let i = index;">
+       {{user.name}} - {{user.age}} - {{user.salary}}
+       <button (click)="removeUser(i)">Remove</button>
+       <button (click)="updateUser(i, user)">EDIT</button>
+  </li>
+</ul>
+
+
+
+<div [style.visibility]="isEditableTrue ? 'hidden' : 'visible' " style="background: lightblue; width: 500px; height: 50px;border: 2px dotted pink;float: right; position: absolute; right: 0px; top: 50px;">
+    <input type="text" [(ngModel)]="updateUserVal.name" value=user.name>
+    <input type="text" [(ngModel)]="updateUserVal.age" value=user.age>
+    <input type="text" [(ngModel)]="updateUserVal.salary" value=user.salary>
+    <button (click)="okComfireUpdate()">Update</button>
+ </div>
+
+<div style="width: 300px; height: 200px;">
+  <app-user-view></app-user-view>
+</div>

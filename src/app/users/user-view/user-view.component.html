@@ -1,0 +1,13 @@
+
+<div style="background: lightgray; border: 2px solid mediumblue; padding: 10px; align-items: center">
+  <h3>
+    users - list
+  </h3>
+
+  <ul>
+    <li *ngFor="let user of users | async; let i = index;">
+         {{user.name}} - {{user.age}} - {{user.salary}}
+    </li>
+  </ul>
+</div>
+
